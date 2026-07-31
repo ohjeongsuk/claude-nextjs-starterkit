@@ -61,7 +61,7 @@ function DemoForm() {
               id="name"
               placeholder="홍길동"
               {...register("name")}
-              className={errors.name ? "border-destructive" : ""}
+              aria-invalid={!!errors.name}
             />
             {errors.name && (
               <p className="text-sm text-destructive">{errors.name.message}</p>
@@ -75,7 +75,7 @@ function DemoForm() {
               type="email"
               placeholder="example@email.com"
               {...register("email")}
-              className={errors.email ? "border-destructive" : ""}
+              aria-invalid={!!errors.email}
             />
             {errors.email && (
               <p className="text-sm text-destructive">{errors.email.message}</p>
@@ -88,7 +88,7 @@ function DemoForm() {
               id="message"
               placeholder="여기에 메시지를 입력해주세요"
               {...register("message")}
-              className={errors.message ? "border-destructive" : ""}
+              aria-invalid={!!errors.message}
             />
             {errors.message && (
               <p className="text-sm text-destructive">{errors.message.message}</p>
