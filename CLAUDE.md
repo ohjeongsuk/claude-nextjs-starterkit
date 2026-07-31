@@ -169,6 +169,10 @@ Check `node_modules/next/dist/docs/01-app/01-getting-started/08-caching.md` befo
 5. **Debug styling issues**: Check `app/globals.css` and the oklch color values in `:root`/`.dark`
 6. **Check TypeScript errors**: `npm run lint` and VS Code's TypeScript extension (configured via `.vscode/settings.json`)
 
+## Code Review Automation
+
+After code implementation (file creation/modification) is complete, invoke the `code-reviewer` subagent (using the Agent tool with `subagent_type: code-reviewer`) to review the files just modified. This ensures consistent code quality according to project conventions. The review results should be summarized and reported to the user.
+
 ---
 
 **Last Updated**: 2026-07-31  
