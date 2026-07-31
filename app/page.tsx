@@ -22,7 +22,7 @@ import { Calendar } from "@/components/ui/calendar"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { format } from "date-fns"
 import { ko } from "date-fns/locale"
-import { MoreVertical, Mail } from "lucide-react"
+import { MoreVertical } from "lucide-react"
 
 const formSchema = z.object({
   name: z.string().min(2, "이름은 최소 2글자 이상이어야 합니다"),
