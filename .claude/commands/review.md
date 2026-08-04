@@ -62,7 +62,7 @@ allowed-tools:
 ## 프로젝트 컨텍스트 (리뷰 시 항상 고려)
 
 - **Tailwind v4**: `tailwind.config.ts` 없음. 모든 설정은 `app/globals.css`의 `@theme inline` / CSS 변수(oklch) 기반. 색상 하드코딩(hex/rgb) 제안 금지.
-- **shadcn/ui**: `components/ui/`의 기존 컴포넌트를 우선 재사용. 새 UI 프리미티브를 직접 만들기 전에 `npx shadcn-ui@latest add`로 추가 가능한지 먼저 검토.
+- **shadcn/ui**: `components/ui/`의 기존 컴포넌트를 우선 재사용. 새 UI 프리미티브를 직접 만들기 전에 `npx shadcn@latest add`로 추가 가능한지 먼저 검토.
 - **폼**: react-hook-form + zod + `@hookform/resolvers`가 표준 패턴. 새로운 검증 로직을 수동 구현하는 대신 zod 스키마 확장을 우선 제안.
 - **경로 별칭**: `@/components`, `@/components/ui`, `@/lib/utils` (`components.json` 기준).
 - **TypeScript strict**: 모든 파일이 strict 모드. `any`, 암묵적 `as` 단언은 반드시 지적.

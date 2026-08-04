@@ -21,7 +21,14 @@ Always check deprecation notices and confirm APIs exist in Next.js 16 before imp
 - `npm run lint` — Run ESLint on all files
 - `npx eslint <file>` — Lint a single file
 
-**No test runner is installed.** The project uses ESLint only (no vitest/jest/Playwright test framework). Playwright MCP (configured in `.mcp.json`) is available for browser automation tasks, not unit testing.
+**MCP Tools:**
+
+**No test runner is installed.** The project uses ESLint only (no vitest/jest/Playwright test framework).
+
+- **Playwright MCP**: Browser automation tasks (configured in `.mcp.json`). Use for interactive testing and web scraping, not unit testing.
+- **context7**: Library documentation lookups. Use when implementing features with react-hook-form, zod, react-day-picker, radix-ui, next-themes, or other external dependencies — do not guess API signatures. For Next.js itself, prioritize reading `node_modules/next/dist/docs/` (see Breaking Changes section above).
+- **sequential-thinking**: Multi-step problem solving. Use when designing new shadcn component combinations, choosing caching strategies, or analyzing complex architectural decisions specific to this Next.js 16 project.
+- **shadcn MCP**: Component discovery and CLI alternative (configured in `.mcp.json`). See shadcn/ui section below for usage.
 
 ## Architecture
 
@@ -65,7 +72,7 @@ shadcn/ui components are **generated and stored locally** in `components/ui/`. T
   - `@/lib/utils` → `./lib/utils` (contains `cn()` function)
   - `style: "radix-nova"` — Non-standard shadcn style (not the traditional "new-york" or "default")
 
-- **When to update components**: Run `npx shadcn@latest add <component-name>` to regenerate. It will update files in `components/ui/` and install any new dependencies to `package.json`.
+- **When to update components**: Run `npx shadcn@latest add <component-name>` to regenerate. It will update files in `components/ui/` and install any new dependencies to `package.json`. Alternatively, use the `shadcn` MCP server (configured in `.mcp.json`) for interactive component discovery and selection within a conversation context.
 
 - **Utility function** (`lib/utils.ts`): `cn()` combines clsx + tailwind-merge for conditional class handling.
 

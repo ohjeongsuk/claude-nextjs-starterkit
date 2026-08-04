@@ -42,7 +42,7 @@ model: sonnet
 - 구조, 변수/함수명, 중복 코드 검토
 - 이 프로젝트의 기존 패턴과의 일관성:
   - `cn()` 유틸(tailwind-merge + clsx) 사용 여부
-  - shadcn/ui 컴포넌트 재사용 가능성 (새로운 UI 컴포넌트를 직접 만들기 전에 `npx shadcn-ui@latest add`로 추가할 수 있는지 검토)
+  - shadcn/ui 컴포넌트 재사용 가능성 (새로운 UI 컴포넌트를 직접 만들기 전에 `npx shadcn@latest add`로 추가할 수 있는지 검토)
   - 기존 컴포넌트 디렉터리 구조 준수 여부
   - 경로 별칭(`@/components`, `@/components/ui`, `@/lib/utils`) 올바른 사용 여부
 
@@ -74,7 +74,7 @@ model: sonnet
 ### shadcn/ui 컴포넌트 라이브러리
 - 컴포넌트는 `components/ui/`에 **로컬로 생성**되어 저장됨 (npm 패키지 아님)
 - `components.json` 설정 기반 경로 별칭: `@/components` → `./components`, `@/components/ui` → `./components/ui`
-- 새로운 UI 컴포넌트는 `npx shadcn-ui@latest add <component-name>`으로 추가
+- 새로운 UI 컴포넌트는 `npx shadcn@latest add <component-name>`으로 추가
 - 기존 컴포넌트 재사용 우선 (e.g., Button, Card, Dialog, Sheet, Tabs, Badge, Avatar, DropdownMenu 등 이미 추가됨)
 - **Radix-Nova 스타일** 사용 (비표준, style: "radix-nova")
 
