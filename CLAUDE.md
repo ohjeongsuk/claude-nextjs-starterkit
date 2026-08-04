@@ -65,7 +65,7 @@ shadcn/ui components are **generated and stored locally** in `components/ui/`. T
   - `@/lib/utils` → `./lib/utils` (contains `cn()` function)
   - `style: "radix-nova"` — Non-standard shadcn style (not the traditional "new-york" or "default")
 
-- **When to update components**: Run `npx shadcn-ui@latest add <component-name>` to regenerate. It will update files in `components/ui/` and install any new dependencies to `package.json`.
+- **When to update components**: Run `npx shadcn@latest add <component-name>` to regenerate. It will update files in `components/ui/` and install any new dependencies to `package.json`.
 
 - **Utility function** (`lib/utils.ts`): `cn()` combines clsx + tailwind-merge for conditional class handling.
 
@@ -110,7 +110,7 @@ components/
 │   ├── site-header.tsx   # Header with ThemeToggle
 │   ├── site-footer.tsx   # Footer
 │   ├── container.tsx     # Max-width wrapper
-│   └── page-header.tsx   # (Optional) for page titles
+│   └── page-header.tsx   # Page title/description wrapper (used in app/page.tsx)
 ├── theme-provider.tsx    # "use client", next-themes wrapper
 └── theme-toggle.tsx      # Dark mode toggle button
 
@@ -163,7 +163,7 @@ Check `node_modules/next/dist/docs/01-app/01-getting-started/08-caching.md` befo
 ## Workflow Tips
 
 1. **Add a new page**: Create `app/<route-name>/page.tsx`
-2. **Add a new shadcn component**: `npx shadcn-ui@latest add <component-name>`
+2. **Add a new shadcn component**: `npx shadcn@latest add <component-name>`
 3. **Create a server component**: Use the default (no `"use client"` directive)
 4. **Create an interactive component**: Add `"use client"` at the top
 5. **Debug styling issues**: Check `app/globals.css` and the oklch color values in `:root`/`.dark`
@@ -171,7 +171,13 @@ Check `node_modules/next/dist/docs/01-app/01-getting-started/08-caching.md` befo
 
 ## Code Review Automation
 
-After code implementation (file creation/modification) is complete, invoke the `code-reviewer` subagent (using the Agent tool with `subagent_type: code-reviewer`) to review the files just modified. This ensures consistent code quality according to project conventions. The review results should be summarized and reported to the user.
+This project has two code review workflows, each for different use cases:
+
+### Automatic Review (Post-Implementation)
+After file creation or modification is complete, invoke the `code-reviewer` subagent (via `Agent` tool with `subagent_type: code-reviewer`) to review the changes. This automatically analyzes code quality against this project's conventions (Next.js 16, TypeScript strict, shadcn/ui, Tailwind v4) and reports findings to the user. See `.claude/agents/code-reviewer.md` for review criteria (5-item analysis rubric, project-specific guidelines).
+
+### Manual Review (/review Command)
+When you want to review a specific code snippet or file on demand, use the `/review` command (defined in `.claude/commands/review.md`). This allows you to paste code or reference a file path for immediate feedback without waiting for post-implementation automation. Same review criteria as automatic review.
 
 ---
 
