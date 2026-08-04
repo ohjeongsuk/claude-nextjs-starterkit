@@ -5,7 +5,9 @@
       "PowerShell(Get-Process *)",
       "WebSearch",
       "WebFetch",
-      "mcp__playwright"
+      "mcp__playwright",
+      "mcp__sequential-thinking",
+      "mcp_shadcn"
     ]
   },
   "enabledMcpjsonServers": [
