@@ -37,8 +37,8 @@ export default function RootLayout({
       <body className="flex min-h-screen flex-col bg-background text-foreground">
         <ThemeProvider>
           <SiteHeader />
-          <main className="flex-1">
-            <Container>{children}</Container>
+          <main className="flex flex-1 flex-col">
+            <Container fullHeight>{children}</Container>
           </main>
           <SiteFooter />
           <Toaster />

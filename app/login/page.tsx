@@ -33,7 +33,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex flex-1 items-center justify-center p-4">
+    <div className="flex h-full items-center justify-center p-4">
       <Card className="w-full max-w-sm">
         <CardHeader className="space-y-2">
           <CardTitle className="text-2xl">로그인</CardTitle>
