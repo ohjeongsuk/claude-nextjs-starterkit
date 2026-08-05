@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Separator } from "@/components/ui/separator"
 import { Container } from "./container"
@@ -27,7 +28,12 @@ export function SiteHeader() {
               </Link>
             </nav>
           </div>
-          <ThemeToggle />
+          <div className="flex items-center gap-2">
+            <Button variant="outline" size="sm" asChild>
+              <Link href="/login">로그인</Link>
+            </Button>
+            <ThemeToggle />
+          </div>
         </div>
       </Container>
       <Separator />
