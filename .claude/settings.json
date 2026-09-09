@@ -7,7 +7,7 @@
       "WebFetch",
       "mcp__playwright",
       "mcp__sequential-thinking",
-      "mcp_shadcn"
+      "mcp__shadcn"
     ]
   },
   "enabledMcpjsonServers": [
